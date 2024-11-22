@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'norse-bold';
+    src: url('./fonts/Norse-Bold.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 8px;
+    background-color: #F3F3E0;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #b2c1c0;
+    font-family: 'norse-bold';
+}
+
+h1 > img {
+    width: 32px;
+    height: 32px;
+}
