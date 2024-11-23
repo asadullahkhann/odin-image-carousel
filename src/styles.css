@@ -53,8 +53,8 @@ h1 > img {
 
 /* account for padding & border */
 .frame {
-    width: 440px;
-    height: 290px;
+    width: 340px;
+    height: 340px;
     display: flex;
     position: relative;
     border: 10px solid #608BC1;
@@ -66,8 +66,8 @@ h1 > img {
 }
 
 .slide > img {
-    width: 400px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
 }
 
 .hide {
