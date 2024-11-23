@@ -59,6 +59,7 @@ h1 > img {
     position: relative;
     border: 10px solid #608BC1;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .slides {
@@ -68,6 +69,7 @@ h1 > img {
 .slide > img {
     width: 300px;
     height: 300px;
+    border-radius: 5px;
 }
 
 .hide {
