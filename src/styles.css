@@ -51,8 +51,10 @@ h1 > img {
     align-items: center;
 }
 
+/* account for padding & border */
 .frame {
     width: 440px;
+    height: 290px;
     display: flex;
     position: relative;
     border: 10px solid #608BC1;
@@ -64,7 +66,8 @@ h1 > img {
 }
 
 .slide > img {
-    width: 100%;
+    width: 400px;
+    height: 250px;
 }
 
 .hide {
