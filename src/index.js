@@ -7,21 +7,13 @@ const circles = document.querySelectorAll(".circle");
 
 let slideIndex = 0;
 
-function moveToNextSlideBtn() {
-  if (slideIndex === 9) {
-    slideIndex = 0;
-  } else {
-    slideIndex += 1;
-  }
+function nextSlide() {
+  slideIndex = slideIndex === 9 ? 0 : slideIndex + 1
   showSlides();
 }
 
-function moveToPreviousSlide() {
-  if (slideIndex === 0) {
-    slideIndex = 9;
-  } else {
-    slideIndex -= 1;
-  }
+function previousSlide() {
+  slideIndex = slideIndex === 0 ? 9 : slideIndex - 1;
   showSlides();
 }
 
@@ -40,12 +32,12 @@ function showSlides() {
   circles[slideIndex].setAttribute("class", "circle filled");
 }
 
-prevBtn.addEventListener("click", moveToPreviousSlide);
-nextBtn.addEventListener("click", moveToNextSlideBtn);
+prevBtn.addEventListener("click", previousSlide);
+nextBtn.addEventListener("click", nextSlide);
 
 showSlides();
 
-setInterval(moveToNextSlideBtn, 5000);
+setInterval(nextSlide, 5000);
 
 circles.forEach((circle) => {
   circle.addEventListener("click", (e) => {
