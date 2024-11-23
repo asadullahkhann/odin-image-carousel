@@ -114,8 +114,7 @@ button > img {
 .circles {
     width: 100%;
     position: absolute;
-    bottom: 10%;
-    align-self: flex-end;
+    bottom: 8%;
     display: flex;
     justify-content: center;
     gap: 5px;
