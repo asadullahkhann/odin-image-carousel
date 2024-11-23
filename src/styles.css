@@ -52,9 +52,11 @@ h1 > img {
 }
 
 .frame {
-    width: 400px;
+    width: 480px;
     display: flex;
     position: relative;
+    border: 10px solid #608BC1;
+    padding: 10px;
 }
 
 .slides {
@@ -72,6 +74,10 @@ h1 > img {
 .prev, .next {
     position: absolute;
     align-self: center;
+}
+
+.prev {
+    left: 0;
 }
 
 .next {
