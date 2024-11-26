@@ -61,6 +61,7 @@ h1 > img {
   border: 10px solid #608bc1;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 0px 2px 6px #000;
 }
 
 .slides {
