@@ -8,7 +8,7 @@
   src: url("./fonts/KTF-Roadbrush.ttf");
 }
 
-:root {
+html, body {
   height: 100%;
 }
 
@@ -19,14 +19,14 @@
 }
 
 body {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
   padding: 8px;
-  background-color: #608bc1;
+  background-color: #133e87;
 }
 
 h1 {
@@ -34,7 +34,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  color: #b2c1c0;
+  color: #fff;
   font-family: "norse-bold";
 }
 
@@ -44,11 +44,8 @@ h1 > img {
 }
 
 .content {
-  flex-grow: 1;
-  background-color: #f3f3e0;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 /* account for padding & border */
@@ -64,14 +61,35 @@ h1 > img {
   box-shadow: 0px 2px 6px #000;
 }
 
-.slides {
-  display: flex;
-}
-
-.slide > img {
+.slides > img {
   width: 300px;
   height: 300px;
   border-radius: 5px;
+  transform-origin: left;
+  animation: slide-forward .3s ease-in-out;
+}
+
+.slides > .slide-backward {
+  transform-origin: right;
+  animation: slide-backward .3s ease-in-out;
+}
+
+@keyframes slide-forward {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slide-backward {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .hide {
@@ -81,6 +99,7 @@ h1 > img {
 .prev,
 .next {
   position: absolute;
+  z-index: 2;
   align-self: center;
 }
 
@@ -103,6 +122,7 @@ button {
 
 .next > button {
   border-radius: 3px 0 0 3px;
+
 }
 
 button:active {
@@ -116,19 +136,19 @@ button > img {
 
 .circles {
   position: absolute;
-  bottom: 8%;
+  bottom: 20px;
   display: flex;
   gap: 5px;
 }
 
 .circle {
   padding: 5px;
-  border: 1px solid #f3f3e0;
+  border: 1px solid #fff;
   border-radius: 50%;
 }
 
 .circle.filled {
-  background-color: #f3f3e0;
+  background-color: #fff;
 }
 
 footer {
@@ -138,7 +158,7 @@ footer {
 
 footer p {
   font-size: 1rem;
-  color: #f3f3e0;
+  color: #fff;
   font-family: "ktf-roadbrush";
 }
 
@@ -150,6 +170,6 @@ footer a {
 }
 
 footer img {
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
 }
