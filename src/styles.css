@@ -158,10 +158,11 @@ footer p {
 footer a {
   color: inherit;
   display: inline-flex;
-  gap: 5px;
+  gap: 4px;
 }
 
 footer img {
   width: 16px;
   height: 16px;
+  align-self: center;
 }
