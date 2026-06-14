@@ -1,21 +1,21 @@
 import "./styles.css";
 
 const slides = document.querySelectorAll(".slides > img");
-const prevBtn = document.querySelector(".prev>button");
-const nextBtn = document.querySelector(".next>button");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
 const circles = document.querySelectorAll(".circle");
 
-let slideIndex = 0;
+let currentSlideIndex = 0;
 
 function nextSlide() {
-  slideIndex = slideIndex === 9 ? 0 : slideIndex + 1
+  currentSlideIndex = currentSlideIndex === 11 ? 0 : currentSlideIndex + 1
   showSlides();
 }
 
 function previousSlide() {
-  slideIndex = slideIndex === 0 ? 9 : slideIndex - 1;
+  currentSlideIndex = currentSlideIndex === 0 ? 11 : currentSlideIndex - 1;
   showSlides();
-  slides[slideIndex].classList.add("slide-backward");
+  slides[currentSlideIndex].classList.add("slide-backward");
 }
 
 function resetSlides() {
@@ -29,8 +29,8 @@ function resetSlides() {
 
 function showSlides() {
   resetSlides();
-  slides[slideIndex].classList = "";
-  circles[slideIndex].classList.add("filled");
+  slides[currentSlideIndex].classList.remove('hide');
+  circles[currentSlideIndex].classList.add("filled");
 }
 
 prevBtn.addEventListener("click", previousSlide);
@@ -38,13 +38,19 @@ nextBtn.addEventListener("click", nextSlide);
 
 showSlides();
 
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 7000);
 
 circles.forEach((circle) => {
   circle.addEventListener("click", (e) => {
     const thisCircle = e.target;
-    const thisCircleIndex = [...circles].indexOf(thisCircle);
-    slideIndex = thisCircleIndex;
+    const newSlideIndex = [...circles].indexOf(thisCircle);
+    if (newSlideIndex < currentSlideIndex) {
+      currentSlideIndex = newSlideIndex;
+      showSlides();
+      slides[newSlideIndex].classList.add('slide-backward');
+      return;
+    };
+    currentSlideIndex = newSlideIndex;
     showSlides();
   });
 });
